@@ -36,7 +36,7 @@ int main()
 {
     int n;
     cin >> n;
-    int m = n;
+    int m = n; //copy kiye 
     // cout << IsPalindrome(n);
     int rev_num = 0;
     while (n > 0)
