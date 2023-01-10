@@ -1,27 +1,19 @@
 using namespace std;
 #include <bits/stdc++.h>
-int MaxElement(int arr[], int n, int i)
-{
-    int maxi = INT_MIN;
-    int MaxIndex = 0;
-    for (; i < n; i++)
-    {
-        if (arr[i] > maxi)
-            ;
-        maxi = arr[i];
-        MaxIndex = i;
-    }
-    return MaxIndex;
-}
+
 void LeaderInArr(int arr[], int n)
 {
     vector<int> ans;
-    for (int i = 0; i < n; i++)
-    {
-        int maxIndex = MaxElement(arr, n, i);
-        ans.push_back(arr[maxIndex]);
-        i = maxIndex + 1;
+    ans.push_back(arr[n-1]);
+    int curr = arr[n-1] ;
+    for(int i = n-2 ; i >= 0 ; i--){
+        if(arr[i] > curr)
+        {
+            curr = arr[i] ;
+            ans.push_back(curr);
+        }
     }
+    reverse(ans.begin(), ans.end());
     for (int i = 0; i < ans.size(); i++)
         cout << ans[i] << " ";
 }

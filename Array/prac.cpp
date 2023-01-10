@@ -1,42 +1,48 @@
-// Given an array arr[] of n positive integers. 
-// The task is to find the maximum for every adjacent pairs in the array.
-
-
-
-
-// // n = 6
-// // arr[] = {1,2,2,3,4,5}
-// // Output: 2 2 3 4 5
-// // Explanation: Maximum of arr[0] and arr[1]
-// // is 2, that of arr[1] and arr[2] is 2, ...
-// // and so on. For last two elements, maximum 
-// // is 5.
-#include<bits/stdc++.h>
-using namespace std ;
-void SubsetMAx(int arr[] , int n)
+#include <bits/stdc++.h>
+using namespace std;
+// void Frequency(int arr[] , int n)
+// {
+//     vector<int>ans  ;
+//     int curr , cnt = 1 ;
+//    for(int i =0 ; i < n ; i++)
+//    {
+//      curr = arr[i] ;
+//      for(int j = i + 1 ; j < n ; j++)
+//      {
+//        if(curr == arr[j])
+//        {
+//         i = j ;
+//         cnt++ ;
+//        }
+//      }
+//         ans.push_back(cnt);
+//         cnt=1 ;
+//    }
+//    for(int i=0; i < ans.size(); i++)
+//    {
+//     cout<<ans[i]<<" ";
+//    }
+// }
+void frequencyCount(int arr[], int N, int p)
 {
-    vector<int>ans ;
-    for(int i = 0 ; i < n-1 ; i++)
+    int count = 0;
+    for (int i = 1; i <= p; i++)
     {
-        if(arr[i] >= arr[i+1])
+        for (int j = 0; j < N; j++)
         {
-            ans.push_back(arr[i]);
+            if (arr[j] == i)
+            {
+                count++;
+            }
         }
-        else 
-        {
-            ans.push_back(arr[i+1]);
-
-        }
-    }
-    for(int i =0 ; i < ans.size() ; i++)
-    {
-        cout<<ans[i]<<" ";
+        cout << count << " ";
+        count = 0;
     }
 }
 int main()
 {
-int n = 6 ;
-int arr[n] = {1,2,2,3,4,5};
-SubsetMAx(arr,n);
+    int n = 5;
+    int p = 5;
+    int arr[n] = {2, 3, 2, 3, 5};
+    frequencyCount(arr, n, p);
 }
-
