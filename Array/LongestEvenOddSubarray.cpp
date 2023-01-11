@@ -27,6 +27,9 @@ int FindEvenOddSubArray(int *arr, int n)
       {
         curr++ ;
       }
+      else{
+        curr = 1 ;
+      }
       res = max(res , curr) ;
 
     }
