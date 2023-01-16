@@ -37,6 +37,6 @@ int main()
     /*9
 2 1 3 4 2 1 5 1 7*/
     int n = 9;
-    int arr[n] = {2 ,1, 3, 4, 2, 1, 5, 1, 7};
+    int arr[n] = {2 ,1, 3, 4, 2, 1, 5, 1, 7}    ;
     cout << "maxDiffernece = " << MaxDifference(arr, n);
 }

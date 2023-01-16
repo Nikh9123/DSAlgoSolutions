@@ -39,10 +39,20 @@ void frequencyCount(int arr[], int N, int p)
         count = 0;
     }
 }
+// int Fibonacci(int n)
+// {
+//    if(n <=1 )
+//    {
+//     return 1 ;
+//    }
+//    return Fibonacci(n-1) + Fibonacci(n-2);
+// }
 int main()
 {
     int n = 5;
-    int p = 5;
-    int arr[n] = {2, 3, 2, 3, 5};
-    frequencyCount(arr, n, p);
+    // int p = 5;
+    // int arr[n] = {2, 3, 2, 3, 5};
+    // frequencyCount(arr, n, p);
+    // cout<<Fibonacci(n);
 }
+// 1 1 2 3 5 8 
