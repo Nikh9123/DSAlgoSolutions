@@ -1,3 +1,6 @@
+/*
+@https://leetcode.com/problems/max-consecutive-ones/description/
+*/
 using namespace std;
 #include <bits/stdc++.h>
 int ConsecutiveOnes(int *arr , int n)

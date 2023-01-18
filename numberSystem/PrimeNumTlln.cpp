@@ -20,6 +20,8 @@ bool IsPrime(int n)
 void Seive(int n)
 {
     vector<bool>Isprime(n+1, true);
+    cout<<"size= "<<Isprime.size();
+    cout<<endl;
     for (int i = 2; i * i <= n ; i++)
     {
         /* code */
