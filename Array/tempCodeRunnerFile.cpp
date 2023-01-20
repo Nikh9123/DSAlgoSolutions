@@ -1,2 +1,5 @@
- ;
-    int arr[n] = {1,4,0,0,3,10,5};
+ 
+    //   for(int i = 0 ;i < prefixSum.size();i++)
+    //   {
+    //     cout<<"hi = "<<prefixSum[i]<<" ";
+    //   }
