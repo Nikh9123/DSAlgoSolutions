@@ -27,7 +27,7 @@ using namespace std;
 
 int WindowSliding(int arr[], int n, int k)
 {
-    //naive approach 
+    //naive approach  TC = O(n*k) , SC =O(1)
 //    int res = arr[0];
     // for(int i = 0 ; i + k-1 < n ; i++)
     // {
@@ -43,6 +43,7 @@ int WindowSliding(int arr[], int n, int k)
 
 
     //efficient approach 
+    // TC = O(n) , SC =O(1)
     int sum = 0 , res = INT_MIN ;
     for(int i = 0 ; i < k ; i++)
     {
