@@ -38,15 +38,16 @@ int firstMissingPositive(vector<int>& nums) {
         for(int i =0 ; i < nums.size() ; i++)
         {
             int currEle = nums[i] ; // eg : currEle = 4
-            int chair = currEle -1 ; //chair where element should sit currEle -1 :eg= 4-1= 3 
             
             //check if current element isn't sitting on it's correct position  and swap 
-            if(currEle != nums[chair] && currEle >= 1 && currEle <= n )
+            if(currEle >= 1 && currEle <= n ){
+            int chair = currEle -1 ; //chair where element should sit currEle -1 :eg= 4-1= 3 
+            if(currEle != nums[chair] )
             {
                  swap(nums[chair] , nums[i]) ;
                  i-- ; //again check if element on index is correct position or not 
             }
-
+            }
         }
 
         for(int i = 0 ; i < nums.size() ; i++)
