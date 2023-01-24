@@ -30,39 +30,37 @@ int majorityElement(int arr[], int n)
     // efficient approach TC = O(n)
     // for finding the most occured elements
     // using moore's voting algorithm
-    int count = 1, res = 0;
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[res] == arr[i])
+    int votes = 1 , candidate = 0 ;
+        
+        for(int i = 1 ; i < n ; i++)
         {
-            count++;
+            if(arr[candidate] == arr[i])
+            {
+                votes++ ;
+            }
+            else {
+                votes-- ;
+            }
+            if(votes == 0)
+            {
+                candidate = i ;
+                votes = 1 ;
+            }
+            
         }
+        votes = 0 ;
+        for(int i =0 ; i < n ; i++)
+        {
+            if(arr[i] == arr[candidate])
+            {
+                votes ++ ;
+            }
+        }
+        
+        if(votes > n/2)
+            return arr[candidate];
         else
-        {
-            count--;
-        }
-        if (count == 0)
-        {
-            res = i;
-            count = 1;
-        }
-    }
-    count = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] == arr[res])
-        {
-            count++;
-        }
-    }
-    if (count <= n / 2)
-    {
-        return -1;
-    }
-    else
-    {
-        return arr[res];
-    }
+        return -1 ;
 }
 int main()
 {
