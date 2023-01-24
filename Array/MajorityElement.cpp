@@ -61,6 +61,7 @@ int majorityElement(int arr[], int n)
             return arr[candidate];
         else
         return -1 ;
+//hello
 }
 int main()
 {
