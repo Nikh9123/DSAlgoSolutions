@@ -11,6 +11,8 @@ int findSafe(vector<int> Arr, int k, int idx)
     idx = ((idx + k - 1) % Arr.size()); // getting removal index
     cout << "Arrsize = " << Arr.size() << " ";
     cout << endl;
+    
+    //removing the man from array
     Arr.erase(Arr.begin() + idx);
     return findSafe(Arr, k, idx);
 }
