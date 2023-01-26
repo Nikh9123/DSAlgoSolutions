@@ -1,3 +1,25 @@
+/*
+@https://leetcode.com/problems/running-sum-of-1d-array/submissions/885819744/
+
+*/
+
+/*
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: [1,3,6,10]
+Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
+Example 2:
+
+Input: nums = [1,1,1,1,1]
+Output: [1,2,3,4,5]
+Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
+Example 3:
+
+Input: nums = [3,1,2,10,1]
+Output: [3,4,6,16,17]
+*/
+
 using namespace std;
 #include <bits/stdc++.h>
 // int getSum(int arr[], int n, int e)
@@ -31,31 +53,27 @@ using namespace std;
 //     cout << endl;
 //     // return sum ;
 // }
-int PreFixSum(int arr[] , int n , int l , int r)
+int PreFixSum(int arr[], int n, int l, int r)
 {
-    vector<int>preSum(n);
+    vector<int> preSum(n);
     preSum[0] = arr[0];
-    for(int i =1 ; i < n ; i++)
+    for (int i = 1; i < n; i++)
     {
-        preSum[i] = preSum[i-1] + arr[i];
+        preSum[i] = preSum[i - 1] + arr[i];
     }
-    if(l == 0)
+    if (l == 0)
     {
         return preSum[r];
     }
-    
-    return preSum[r] - preSum[l-1];
-    
-}
 
+    return preSum[r] - preSum[l - 1];
+}
 
 int main()
 {
     int n = 7;
     int arr[n] = {2, 8, 3, 9, 6, 5, 4};
-   int l ,r ;
-   cin>>l>>r;
-   cout<<PreFixSum(arr, n , l , r);
-
-    
+    int l, r;
+    cin >> l >> r;
+    cout << PreFixSum(arr, n, l, r);
 }
