@@ -20,7 +20,7 @@ void Frequency(int arr[], int n )
 
         }
     cout<<"element : "<<arr[i-1] <<" and"<<"Frequency : "<<freq<<endl;
-    i++ ;
+    i++ ; //if(arr[i] != arr[i-1]) then i uske aagey wale element se check karega 
     freq = 1 ;    
     }
     

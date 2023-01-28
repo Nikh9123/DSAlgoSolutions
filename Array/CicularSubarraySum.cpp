@@ -5,7 +5,7 @@ int normalSubarraySum(int arr[] , int n)
     int maxEnd = arr[0] , res = 0 ;
     for(int i = 1 ; i < n ; i++)
     {
-       maxEnd = max(maxEnd = arr[i] , arr[i]);
+       maxEnd = max(maxEnd + arr[i] , arr[i]);
        res = max(res , maxEnd);
     }
     return res ;

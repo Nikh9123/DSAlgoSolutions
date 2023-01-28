@@ -36,6 +36,9 @@
 using namespace std ;
 int secondlargest(int arr[] , int n)
 {
+
+  //1 4 3 2 5 6
+  
    int largest = 0 , res = -1;
    for(int i = 1 ; i < n ; i++)
    {

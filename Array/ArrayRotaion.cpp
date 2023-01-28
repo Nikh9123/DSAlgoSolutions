@@ -72,47 +72,47 @@ using namespace std;
     }
     void rotateArr(int arr[], int d, int n){
         // code here
-        //implementaion of juggling algo
-//           d = d % n;
-//     int g_c_d = gcd(d, n);
-//     for (int i = 0; i < g_c_d; i++) {
-//         /* move i-th values of blocks */
-//         int temp = arr[i];
-//         int j = i;
+        // implementaion of juggling algo
+          d = d % n;
+    int g_c_d = gcd(d, n);
+    for (int i = 0; i < g_c_d; i++) {
+        /* move i-th values of blocks */
+        int temp = arr[i];
+        int j = i;
  
-//         while (1) {
-//             int k = j + d;
-//             if (k >= n)
-//                 k = k - n;
+        while (1) {
+            int k = j + d;
+            if (k >= n)
+                k = k - n;
  
-//             if (k == i)
-//                 break;
+            if (k == i)
+                break;
  
-//             arr[j] = arr[k];
-//             j = k;
-//         }
-//         arr[j] = temp;
-//     }
-// for(int i=0 ; i<n ; i++)
-// cout<<arr[i]<<" ";
+            arr[j] = arr[k];
+            j = k;
+        }
+        arr[j] = temp;
+    }
+for(int i=0 ; i<n ; i++)
+cout<<arr[i]<<" ";
 
 
 
 
 //    naive approach 
-int t=0 ;
-while(t < d)
-{
-    int temp = arr[0];
-    for(int i = 0 ; i < n-1 ; i++)
-    {
-        arr[i] = arr[i+1] ;
-    }
-    t++ ;
-    arr[n-1] = temp ;
-}
-for(int i=0 ; i<n ; i++)
-cout<<arr[i]<<" ";
+// int t=0 ;
+// while(t < d)
+// {
+//     int temp = arr[0];
+//     for(int i = 0 ; i < n-1 ; i++)
+//     {
+//         arr[i] = arr[i+1] ;
+//     }
+//     t++ ;
+//     arr[n-1] = temp ;
+// }
+// for(int i=0 ; i<n ; i++)
+// cout<<arr[i]<<" ";
     }
 int main()
 {
