@@ -1,3 +1,7 @@
+/*
+@https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/889445824/
+*/
+
 #include<bits/stdc++.h>
 using namespace std ;
 int remDup(int arr[] , int n)
