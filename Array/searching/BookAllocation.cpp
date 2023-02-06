@@ -42,7 +42,7 @@ bool IsPossible(int A[] , int n , int m , int mid)
             sum += A[i];
         }
         int e = sum ;
-        
+        //search space = s to e 
         //finding mid to calculate minimum allocation of books
         
         while(s <= e)

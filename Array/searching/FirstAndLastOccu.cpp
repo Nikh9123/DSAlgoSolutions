@@ -1,76 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// using binary search O(logn)
-int GetIndex1st(vector<int> &arr, int n, int k, int low, int high)
+/* if x is present in arr[] then returns the index of
+FIRST occurrence of x in arr[0..n-1], otherwise
+returns -1 */
+int first(int arr[], int low, int high, int x, int n)
 {
-    int mid = low + (high - low) / 2;
-
-    if (low > high)
-    {
-        return -1;
-    }
-    if (arr[mid] == k)
-    {
-        while (arr[mid] == arr[mid - 1])
-        {
-            mid--;
-        }
-        return mid;
-    }
-    else if (arr[mid] > k)
-    {
-        GetIndex1st(arr, n, k, low, mid - 1);
-    }
-    else
-    {
-        GetIndex1st(arr, n, k, mid + 1, high);
-    }
-    return -1 ;
+	if (high >= low) {
+		int mid = low + (high - low) / 2;
+		if ((mid == 0 || x > arr[mid - 1]) && arr[mid] == x)
+			return mid;
+		else if (x > arr[mid])
+			return first(arr, (mid + 1), high, x, n);
+		else
+			return first(arr, low, (mid - 1), x, n);
+	}
+	return -1;
 }
 
-int GetIndexLast(vector<int> &arr, int n, int k, int low, int high)
+/* if x is present in arr[] then returns the index of
+LAST occurrence of x in arr[0..n-1], otherwise
+returns -1 */
+int last(int arr[], int low, int high, int x, int n)
 {
-
-    while (low <= high)
-    {
-        int mid = low + (high - low) / 2;
-
-        if (arr[mid] == k)
-        {
-            while (arr[mid] == arr[mid + 1])
-            {
-                mid++;
-            }
-            return mid;
-        }
-        else if (arr[mid] > k)
-        {
-            high = mid - 1;
-        }
-        else
-        {
-            low = mid + 1;
-        }
-    }
-    return -1 ;
+	if (high >= low) {
+		int mid = low + (high - low) / 2;
+		if ((mid == n - 1 || x < arr[mid + 1])
+			&& arr[mid] == x)
+			return mid;
+		else if (x < arr[mid])
+			return last(arr, low, (mid - 1), x, n);
+		else
+			return last(arr, (mid + 1), high, x, n);
+	}
+	return -1;
 }
 
-vector<int> searchRange(vector<int> &nums, int target)
-{
-    int FirstIndex = GetIndex1st(nums, nums.size(), target, 0, nums.size() - 1);
-    int LastIndex = GetIndexLast(nums, nums.size(), target, 0, nums.size() - 1);
-    return {FirstIndex, LastIndex};
-}
+// Driver program
 int main()
 {
-    vector<int>nums = {5,7,7,8,8,10};
-    int target = 7;
-    vector<int>ans = searchRange(nums , target);
-    for(int i = 0 ; i < ans.size() ; i++)
-    {
-        cout<<ans[i]<<" ";
-    }
-    cout<<endl;
+	int arr[] = { 1, 2, 2, 2, 2, 3, 4, 7, 8, 8 };
+	int n = sizeof(arr) / sizeof(int);
+
+	int x = 8;
+	printf("First Occurrence = %d\t",
+		first(arr, 0, n - 1, x, n));
+	printf("\nLast Occurrence = %d\n",
+		last(arr, 0, n - 1, x, n));
+	return 0;
 }
-// 1 1 2 3 5 8
