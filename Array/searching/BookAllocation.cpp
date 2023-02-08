@@ -6,20 +6,19 @@ bool IsPossible(int A[] , int n , int m , int mid)
         int studentCount = 1 ;
         int pageSum = 0 ;
 
-        //adding pages and assigning to student
+        //* adding pages and assigning to student
         for(int i = 0 ; i < n ; i++){
-            // and checking if it is greater than mid then will go to next student
+            //* and checking if it is greater than mid then will go to next student
             if(pageSum + A[i] <= mid){
                 pageSum += A[i];
             }
 
-            else{ //added pages is greater so we assign pages or books to new student
-                studentCount++ ; //shifting to next student
+            else{ //*added pages is greater so we assign pages or books to new student
+                studentCount++ ; //* shifting to next student
                 
-                //if the studentcount becomes greater than the total no of students
-
-                //If the Array element is greater than the mid :- so we cannot assign the book to a student
-                //so return false
+                //* if the student count becomes greater than the total no of students
+                //* If the Array element is greater than the mid :- so we cannot assign the book to a student
+                //* so return false
                 if(studentCount > m || mid < A[i])
                 {
                     return false ;
@@ -42,16 +41,16 @@ bool IsPossible(int A[] , int n , int m , int mid)
             sum += A[i];
         }
         int e = sum ;
-        //search space = s to e 
-        //finding mid to calculate minimum allocation of books
+        //*search space = s to e 
         
         while(s <= e)
         {
+        //*finding mid to calculate minimum allocation of books
         int mid = s + (e-s)/2 ;
-            if(IsPossible(A , N , M , mid)) // passing mid for checking if it is possible solution 
+            if(IsPossible(A , N , M , mid)) // *passing mid for checking if it is possible solution 
             {
-                Ans = mid ;  //if mid is possible solution eg: 75 
-                e = mid -1; //for finding minimum we go to the left 
+                Ans = mid ;  //*if mid is possible solution eg: 75 
+                e = mid -1; //*for finding minimum we go to the left 
             }
             else{
                 s = mid+1 ;
