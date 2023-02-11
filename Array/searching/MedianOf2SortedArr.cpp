@@ -1,7 +1,12 @@
 using namespace std;
 #include <bits/stdc++.h>
-double Median(int arr1[], int arr2[], int n1, int n2)
+double Median(int arr1[], int n1, int arr2[], int n2)
 {
+  //* check if n > m there swap arras and there size
+  if (n1 > n2)
+  {
+    return Median(arr2, n2, arr1, n1);
+  }
   int begin = 0, end = n1;
   while (begin <= end)
   {
@@ -57,5 +62,5 @@ int main()
   n = 4, m = 5;
   int arr1[n] = {30, 40, 50, 60};
   int arr2[m] = {5, 6, 7, 8, 9};
-  cout << Median(arr1, arr2, n, m);
+  cout << Median(arr1, n, arr2, m);
 }
