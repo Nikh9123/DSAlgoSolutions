@@ -30,7 +30,7 @@ int Repeat(int arr[], int n)
 //   //todo: make the boolean false intially
 // 	memset(match, false, sizeof(match));
 
-//   // todo: make ith index true for each arr[i] value 
+   // todo: make ith index true for each arr[i] value 
 //   for(int i = 0 ; i <n ; i++)
 //   {
 //     if(match[arr[i]])
