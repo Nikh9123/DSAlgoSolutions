@@ -70,7 +70,24 @@ int FisrtIndex(int arr[], int low, int high, int x, int n)
 }
 
 
-int LastIndex
+int LastIndex(int arr[], int low, int high, int x, int n)
+{
+	while(low <= high)
+	{
+		int mid = low + (high-low)/2 ;
+		if(arr[mid] == x)
+		{
+			if(mid == n-1 || arr[mid+1] != arr[mid])
+			return mid ;
+			else
+			low = mid +1 ;
+		}
+		else if(arr[mid] > x)
+		high = mid - 1 ;
+		else
+		low = mid + 1 ;
+	}
+}
 
 // Driver program
 int main()
@@ -84,7 +101,8 @@ int main()
 	printf("\nLast Occurrence = %d\n",
 		   last(arr, 0, n - 1, x, n));
 
-	cout<<"iterative solution :" << FisrtIndex(arr, 0, n - 1, x, n)<<endl;
+	cout<<"iterative solution first index :" << FisrtIndex(arr, 0, n - 1, x, n)<<" ";
+	cout<<"iterative solution last index :" << LastIndex(arr, 0, n - 1, x, n)<<endl;
 
 	return 0;
 }
