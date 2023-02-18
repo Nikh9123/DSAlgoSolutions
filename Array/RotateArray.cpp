@@ -37,11 +37,11 @@ void ArrayRotation(int *arr, int n, int d)
 //     int temp[n];
 //     for (int i = 0; i < n; i++)
 //     {
-//         temp[i] = arr[(i + d) % n];
+//         temp[(i + d) % n + 1] = arr[i];
 //     }
 //     for (int i = 0; i < n; i++)
 //     {
-//         cout << temp[i] << " ";
+//         arr[i] = temp[i];
 //     }
 // }
 int main()
@@ -49,7 +49,8 @@ int main()
     int n = 10, d = 3;
     int arr[10] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     ArrayRotation(arr, n, d);
-    cout<<endl;
-    // RotateArray(arr, n, d);
     printArray(arr, n);
+    cout << endl;
+    // RotateArray(arr, n, d);
+    // printArray(arr, n);
 }

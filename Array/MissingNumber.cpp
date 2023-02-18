@@ -68,7 +68,7 @@ return i+1;              }*/
 
         for(int i =0 ; i < nums.size() ; i++)
         {
-            int currEle = nums[i] ; // eg : currEle = 4
+            int currEle = nums[i] ; // 
             
             //check if current element isn't sitting on it's correct position  and swap 
             if(currEle >= 1 && currEle <= n ){

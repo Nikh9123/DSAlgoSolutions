@@ -9,6 +9,7 @@ using namespace std ;
 void Frequency(int arr[], int n )
 {
 
+    int temp[n];
     sort(arr , arr + n);
     int i =1 , freq =1;
     while(i < n)
@@ -28,6 +29,7 @@ void Frequency(int arr[], int n )
     {
     cout<<"element : "<<arr[n-1] <<" and"<<"Frequency : "<<1<<endl;
     }
+
 }
 
 int main(){

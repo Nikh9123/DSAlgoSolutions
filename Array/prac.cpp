@@ -1,58 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-// void Frequency(int arr[] , int n)
-// {
-//     vector<int>ans  ;
-//     int curr , cnt = 1 ;
-//    for(int i =0 ; i < n ; i++)
-//    {
-//      curr = arr[i] ;
-//      for(int j = i + 1 ; j < n ; j++)
-//      {
-//        if(curr == arr[j])
-//        {
-//         i = j ;
-//         cnt++ ;
-//        }
-//      }
-//         ans.push_back(cnt);
-//         cnt=1 ;
-//    }
-//    for(int i=0; i < ans.size(); i++)
-//    {
-//     cout<<ans[i]<<" ";
-//    }
-// }
-void frequencyCount(int arr[], int N, int p)
+int SquareRoot(int n)
 {
-    int count = 0;
-    for (int i = 1; i <= p; i++)
+  int i = sqrt(n) ;
+  cout<<i;
+  while(n > 0 && i > 0)
+  {
+  //   cout<<"in loop after n--"<<n;
+  // cout<<endl;
+    if(sqrt(n) == i)
     {
-        for (int j = 0; j < N; j++)
-        {
-            if (arr[j] == i)
-            {
-                count++;
-            }
-        }
-        cout << count << " ";
-        count = 0;
+      break;
     }
+    n-- ;
+    // i-- ;
+  }
+  return n ;
 }
-// int Fibonacci(int n)
-// {
-//    if(n <=1 )
-//    {
-//     return 1 ;
-//    }
-//    return Fibonacci(n-1) + Fibonacci(n-2);
-// }
 int main()
 {
-    int n = 5;
-    // int p = 5;
-    // int arr[n] = {2, 3, 2, 3, 5};
-    // frequencyCount(arr, n, p);
-    // cout<<Fibonacci(n);
+  int n = 14;
+  // int p = 5;
+  // int arr[n] = {2, 3, 2, 3, 5};
+  // frequencyCount(arr, n, p);
+  int value =SquareRoot(n);
+  cout<<sqrt(value);
 }
-// 1 1 2 3 5 8 
+// 1 1 2 3 5 8

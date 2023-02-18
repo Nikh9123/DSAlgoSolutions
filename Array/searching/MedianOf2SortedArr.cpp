@@ -1,3 +1,13 @@
+/*
+N = 5, M = 6 
+arr[] = {1,2,3,4,5}
+brr[] = {3,4,5,6,7,8}
+Output: 4
+Explanation: After merging two arrays, 
+elements will be as 1 2 3 3 4 4 5 5 6 7 8
+So, median is 4.
+*/
+
 using namespace std;
 #include <bits/stdc++.h>
 double Median(int arr1[], int n1, int arr2[], int n2)

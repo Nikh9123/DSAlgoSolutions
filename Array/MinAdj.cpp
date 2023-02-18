@@ -15,6 +15,7 @@ mini = min(mini , adj);
 
 return mini ;
 }
+
 int main()
 {
 int n = 21 ;
