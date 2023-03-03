@@ -14,6 +14,9 @@ void iSort(int arr[],int n){
               arr[j+1] = arr[j] ;
               arr[j] = key;
           }
+          else {
+            break ;
+          }
       }
   }
     
