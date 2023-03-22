@@ -60,7 +60,7 @@ string isSubset(int a1[], int a2[], int n, int m) {
          i++ ;
          j++ ;
      }
-     else if(a2[j] > a1[i])
+     else if(a2[j] > a1[i]) 
      {
          i++ ;  //uske aagey check karenge   
      }

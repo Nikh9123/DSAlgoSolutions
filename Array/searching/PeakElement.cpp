@@ -41,7 +41,7 @@ int Peak(int arr[], int n)
 //* using binary search
         //todo :check if arr[mid] is greater than it's neighbour elements then {return} else
         //todo :check do we have elements on left side if yes then compare with its(arr[mid]'s) left element
-        //todo :if arr[mid] is less than then peak element will be on left side
+        //todo :if arr[mid] is less than the peak element will be on left side
         //todo :else it will be on right side 
 int peakElement(int arr[], int n)
     {
