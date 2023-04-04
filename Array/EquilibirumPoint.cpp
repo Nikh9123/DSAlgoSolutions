@@ -64,6 +64,8 @@ int equilibriumPoint(long long arr[], int n)
             start++;
             sum1 += arr[start];
         }
+        cout<<"start ="<<start<<" "<<"high = "<<high<<endl;
+        cout<<"sum1= "<<sum1<<" "<<"sum2 = "<<sum2<<endl;
     }
     if (sum1 == sum2)
         return start + 1;
