@@ -1,6 +1,9 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp"
-    }
+	"files.associations": {
+		"COMMIT_EDITMSG": "git-commit",
+		"iostream": "cpp",
+		"ostream": "cpp",
+		"initializer_list": "cpp",
+		"valarray": "cpp"
+	}
 }
