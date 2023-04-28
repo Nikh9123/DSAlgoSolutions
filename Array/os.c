@@ -28,6 +28,7 @@ int main()
   }
 
   // C) Implement the SJF with preemption algorithm in the simulation program.
+  //sort the process according to thier arrival time
   for (int i = 0; i < numberOfProcesses; i++)
   {
     for (int j = i + 1; j < numberOfProcesses; j++)
@@ -40,17 +41,17 @@ int main()
       }
     }
   }
-
+//we first use those process whose arrTime is SMallest and burstTIme is less
   // SJF with preemption implementation
   int currTime = 0;
   int completed_processes = 0;
-  while (completed_processes < numberOfProcesses && currTime < 100)
+  while (completed_processes < numberOfProcesses && currTime < 200)
   {
     int shrBrstTime = 99999;
     int shrBrstIndex = -1;
     for (int i = 0; i < numberOfProcesses; i++)
     {
-      if (processes[i].ArrvTime <= currTime && processes[i].BrsTime < shrBrstTime && processes[i].complTime == 0)
+      if (processes[i].ArrvTime <= currTime && processes[i].BrsTime < shrBrstTime && processes[i].complTime == 0)//preemption
       {
         shrBrstTime = processes[i].BrsTime;
         shrBrstIndex = i;

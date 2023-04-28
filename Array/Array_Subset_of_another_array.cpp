@@ -3,8 +3,9 @@
 */
 
 /*
-Given two arrays: a1[0..n-1] of size n and a2[0..m-1] of size m. Task is to check whether a2[] is a subset of a1[] or not. Both the arrays can be sorted or unsorted. 
- 
+* Given two arrays: a1[0..n-1] of size n and a2[0..m-1] of size m. Task is to check whether a2[] is a subset of a1[] or not.
+* Both the arrays can be sorted or unsorted.
+
 
 Example 1:
 
@@ -17,26 +18,29 @@ Explanation:
 a2[] is a subset of a1[]
 */
 
-
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
-string isSubset(int a1[], int a2[], int n, int m) ;
+string isSubset(int a1[], int a2[], int n, int m);
 
-int main() {
+int main()
+{
     int t;
     cin >> t;
 
-    while (t--) {
+    while (t--)
+    {
         int n, m;
         cin >> n >> m;
         int a1[n], a2[m];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             cin >> a1[i];
         }
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < m; i++)
+        {
             cin >> a2[i];
         }
 
@@ -47,31 +51,38 @@ int main() {
 
 // } Driver Code Ends
 
+string isSubset(int a1[], int a2[], int n, int m)
+{
+    sort(a1, a1 + n);
+    sort(a2, a2 + m);
 
-string isSubset(int a1[], int a2[], int n, int m) {
- sort(a1 , a1+n);
- sort(a2 , a2+m);
- 
- int i = 0 , j =0 ;
- while(j < m && i < n){
-     
-     if(a1[i] == a2[j]) 
-     {
-         i++ ;
-         j++ ;
-     }
-     else if(a2[j] > a1[i]) 
-     {
-         i++ ;  //uske aagey check karenge   
-     }
-     else{ //(a2[j] < a1[i]) and a2[j] is not present 
-         return "No";
-     }
- }
- 
- if(j == m)
- return "Yes" ;
- else 
- return "No" ;
-     
+    int i = 0, j = 0;
+    while (j < m && i < n)
+    {
+
+        if (a1[i] == a2[j])
+        {
+            i++;
+            j++;
+        }
+
+        /*
+        a1[] = {1,3,7,11,13,21}
+
+       a2[] = {1,3,7,11}
+        */
+        else if (a2[j] > a1[i])
+        {
+            i++; // uske aagey check karenge
+        }
+        else
+        { //(a2[j] < a1[i]) and a2[j] is not present
+            return "No";
+        }
+    }
+
+    if (j == m)
+        return "Yes";
+    else
+        return "No";
 }

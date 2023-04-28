@@ -2,7 +2,8 @@
 * @https://leetcode.com/problems/intersection-of-two-arrays/description/
 */
 /*
-Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+Given two integer arrays nums1 and nums2, return an array of their intersection. 
+Each element in the result must be unique and you may return the result in any order.
 
  
 
@@ -27,7 +28,7 @@ void interSection(int arr1[] , int arr2[],int n , int m)
   for(int i = 0 ; i < n ;i++)
   {
     if(i > 0 && arr1[i-1] == arr1[i])
-    continue; //for going out of upper for loop if we find the sa,e index
+    continue; //for going out of upper for loop if we find the same index
 
     for(int j = 0 ; j < m ; j++)
     {
