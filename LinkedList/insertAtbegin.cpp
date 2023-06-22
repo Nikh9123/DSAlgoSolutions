@@ -21,7 +21,7 @@ void display(node* head)
   }
   cout << "NULL" << endl;
 }
-node* InsertAtBegin(node* head, int x)
+node* insertAtBegin(node* head, int x)
 {
   node* temp = new node(x);
   temp->next = head;
@@ -36,7 +36,7 @@ int main()
   int x;
   cout << "Enter the element you want to insert at begin" << endl;
   cin >> x;
-  head = InsertAtBegin(head, x);
+  head = insertAtBegin(head, x);
 
   display(head);
 }
