@@ -12,19 +12,28 @@ struct node
 };
 void PrintLinkedList(node *head)
 {
-    // node *curr = head;
-    // cout << curr << endl;
-    // while (curr != NULL)
+    // node *curr = head ;
+    // while(curr != NULL)
     // {
-    //     cout << curr->data << "-->";
-    //     curr = curr->next;
+    //     cout<<curr->data<<"-->" ;
+    //     curr = curr->next ;
     // }
-    // cout << endl;
-    if(head == NULL)
-    return ;
+    // cout<<endl;
 
-    cout<<head->data<<"-->";
-    PrintLinkedList(head->next);
+    // //* using recursion below
+    // if(head == NULL)
+    // return ;
+
+    // cout<<head->data<<"-->";
+    // PrintLinkedList(head->next);
+
+
+    node *currNode = head ;
+    while(currNode)
+    {
+        cout<<currNode->data<<"-->";
+        currNode= currNode->next ;
+    }
     
 }
 int main()

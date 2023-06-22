@@ -3,7 +3,7 @@ using namespace std;
 struct node
 {
   int data;
-  node *next;
+  node* next;
   node(int x)
   {
     data = x;
@@ -11,10 +11,9 @@ struct node
   }
 };
 
-
-void display(node *head)
+void display(node* head)
 {
-  node *curr = head;
+  node* curr = head;
   while (curr != NULL)
   {
     cout << curr->data << "-->";
@@ -22,20 +21,22 @@ void display(node *head)
   }
   cout << "NULL" << endl;
 }
-node *InsertAtBegin(node *head, int x)
+node* InsertAtBegin(node* head, int x)
 {
-  node *temp = new node(x);
-  temp = head;
-  return temp;
+  node* temp = new node(x);
+  temp->next = head;
+  head = temp;
+  return head;
 }
 
 int main()
 {
-  node *head = new node(19);
+  node* head = new node(19);
   display(head);
   int x;
   cout << "Enter the element you want to insert at begin" << endl;
   cin >> x;
   head = InsertAtBegin(head, x);
-  
+
+  display(head);
 }
