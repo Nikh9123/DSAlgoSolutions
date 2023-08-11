@@ -6,6 +6,7 @@
 using namespace std ;
 int remDup(int arr[] , int n)
 {
+    //^ 1) naive approach  
     // int neW[n] ;
     // neW[0] = arr[0];
     // int count=1 ;
@@ -19,6 +20,17 @@ int remDup(int arr[] , int n)
         
     // }
     // return count  ;
+
+    //^ 2) naive approach 
+    // std::set<int> ans; // Creating an empty set to store distinct elements
+
+    // for (int i = 0; i < nums.size(); i++) {
+    //     ans.insert(nums[i]); // Inserting elements into the set
+    // }
+
+    // return ans.size(); // Returning the number of distinct elements
+
+
     int res = 1 ;
     for(int i=1 ; i < n; i++)
     {

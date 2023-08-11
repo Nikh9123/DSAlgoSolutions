@@ -19,12 +19,21 @@ void display(node* head)
     cout << curr->data << "->";
     curr = curr->next;
   }
-  cout << endl;
+  cout<<"NULL" << endl;
 }
 
-node *insertAtPosition(node *head , int x)
+node *insertAtPosition(node *head , int x , int pos)
 {
-  
+  int count = pos - 2;
+  node* curr = head;
+  node* temp = new node(x);
+  while (count)
+  {
+    count--;
+    curr = curr->next;
+  }
+  temp->next = curr->next;
+  curr->next = temp;
 }
 int main()
 {
@@ -33,5 +42,10 @@ int main()
   head->next->next = new node(30);
   head->next->next->next = new node(40);
   head->next->next->next->next = new node(50);
+  
+  display(head);
+  int a = ceil(3 / 2);
+  cout << a << endl;
+  insertAtPosition(head, 35, 4);
   display(head);
 }

@@ -35,8 +35,8 @@ vector<int> getSecondOrderElements(int n, vector<int> arr) {
            min = arr[i] ;
        }
 
-       //case 2: arr[i] < max --> implement  ||| arr[i] == secondMax--> ignore
-       
+       //case 2: arr[i] > min --> implement  ||| arr[i] == secondMin--> ignore
+       //1,2,3,4,5,6,7,8,9
        else if(arr[i] > min) {
        if(secondMin == -1 || arr[i] < secondMin)
        {

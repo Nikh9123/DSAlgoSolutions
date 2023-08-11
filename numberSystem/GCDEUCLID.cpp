@@ -8,7 +8,8 @@ int GCD(int a, int b)
   }
   else
   {
-    if (b > a)
+
+if (b > a)
     {
       return (b, a % b);
     }
