@@ -37,8 +37,8 @@ int maxConsecutiveOne(int arr[], int n)
 }
 int main()
 {
-  int n = 12;
-  int arr[n] = { 1,1,1,0,0,1,1,0,1,1,1,1 };
+  int n = 13;
+  int arr[n] = { 1,1,1,0,0,1,1,0,1,1,1,1,0 };
   cout << maxConsecutiveOne(arr, n);
 
 }
