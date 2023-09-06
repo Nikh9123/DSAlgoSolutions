@@ -62,6 +62,6 @@ int main()
   // int n = 10 ;
   // int arr[n] = {20,20,12,20,56,38,36,32,44,66};
   int n = 5;
-  int arr[n] = {4, 3, 57, 42, 46};
-  cout << secondlargest(arr, n);
+  int arr[n] = { 4, 3, 57, 42, 46 };
+  cout << secondlargest(arr, n) << endl;
 }
