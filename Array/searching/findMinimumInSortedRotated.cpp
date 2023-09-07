@@ -1,36 +1,46 @@
-#include<bits/stdc++.h>
+
+
+
+#include <bits/stdc++.h>
 using namespace std;
 
-int findMin(vector<int>& nums) {
-  int n = nums.size();
-  int low = 0, high = n - 1;
-  int mini = INT_MAX ;
-  while (low <= high)
-  {
-    int mid = low + (high - low) / 2;
-    cout << "low = " << low << " " << "high = " << high << endl;
-    cout << " mid = " << mid << endl;
-    if (nums[mid] >= nums[low] && nums[mid] >= nums[high])
-    {
-      low = mid + 1;
-      mini = min(nums[low], mini);
+int findMin(vector<int>& arr) {
+    int low = 0, high = arr.size() - 1;
+    int ans = INT_MAX;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        //search space is already sorted
+        //then arr[low] will always be
+        //the minimum in that search space:
+        if (arr[low] <= arr[high]) {
+            ans = min(ans, arr[low]);
+            break;
+        }
+
+        //if left part is sorted:
+        if (arr[low] <= arr[mid]) {
+            // keep the minimum:
+            ans = min(ans, arr[low]);
+
+            // Eliminate left half:
+            low = mid + 1;
+        }
+        else { //if right part is sorted:
+
+            // keep the minimum:
+            ans = min(ans, arr[mid]);
+
+            // Eliminate right half:
+            high = mid - 1;
+        }
     }
-    else
-    {
-      high = mid - 1;
-      mini = min(nums[high], mini);
-    }
-  }
-  return mini;
+    return ans;
 }
 
 int main()
 {
-  //vector<int>arr = {3,4,5,1,2};
-  // vector<int>arr = { 4,5,6,7,0,1,2 };
-  vector<int>arr = { 2,3,1 };
- 
-  int ans = findMin(arr) ;
-  
-  cout << "minimum is : " << ans<<endl;
+    vector<int> arr = {4, 5, 6, 7, 0, 1, 2, 3};
+    int ans = findMin(arr);
+    cout << "The minimum element is: " << ans << "\n";
+    return 0;
 }
