@@ -1,63 +1,49 @@
-#include<bits/stdc++.h>
+//@https://leetcode.com/problems/koko-eating-bananas/
+#include <bits/stdc++.h>
 using namespace std;
 
-//finds the maimum element in given array
-int findMax(vector<int>nums)
-{
+int findMax(vector<int>& v) {
   int maxi = INT_MIN;
-  for (int i = 0; i < nums.size(); i++)
-  {
-
-    if (nums[i] > maxi)
-    {
-      maxi = nums[i];
-    }
+  int n = v.size();
+  //find the maximum:
+  for (int i = 0; i < n; i++) {
+    maxi = max(maxi, v[i]);
   }
   return maxi;
 }
 
-//find the total eating time when input is given mid
-double eatingTime(vector<int>nums,  int mid) {
-  double ans = 0;
-  for (int i = 0; i < nums.size(); i++)
-  {
-    ans += ceil((double)nums[i]/(double)mid) ;
+int calculateTotalHours(vector<int>& v, int hourly) {
+  int totalH = 0;
+  int n = v.size();
+  //find total hours:
+  for (int i = 0; i < n; i++) {
+    totalH += ceil((double)(v[i]) / (double)(hourly));
   }
-  return ans;
-
+  return totalH;
 }
 
-//finds the minimum eating time it should take
-int minEatingSpeed(vector<int>&nums, int h)
-{
-  
-  int low = 1;
-  int high = findMax(nums);
+int minimumRateToEatBananas(vector<int> v, int h) {
+  int low = 1, high = findMax(v);
 
+  //apply binary search:
   while (low <= high) {
-    int mid = low + (high - low) / 2;
-    int time = eatingTime(nums,  mid);
-
-    if (time > h)
-    {
-      low = mid + 1;
-    }
-    else if (time <= h) {
+    int mid = (low + high) / 2;
+    int totalH = calculateTotalHours(v, mid);
+    if (totalH <= h) {
       high = mid - 1;
     }
-
+    else {
+      low = mid + 1;
+    }
   }
   return low;
 }
 
-int main() {
-  // Declare variables
-  vector<int>arr = { 30,11,23,4,20};
-  int h = 5 ;
-  // vector<int>arr = { 332484035,524908576,855865114,632922376,222257295,690155293,112677673,679580077,337406589,290818316,877337160,901728858,679284947,688210097,692137887,718203285,629455728,941802184 };
-  // int h = 823855818;
-  int ans = minEatingSpeed(arr, h);
-  cout << "koko has to eat miniumum " << ans << " 🍌 per hour" << endl;
-
+int main()
+{
+  vector<int> v = { 7, 15, 6, 3 };
+  int h = 8;
+  int ans = minimumRateToEatBananas(v, h);
+  cout << "Koko should eat atleast " << ans << " bananas/hr.\n";
   return 0;
 }
