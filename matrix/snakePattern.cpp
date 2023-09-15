@@ -1,46 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// void printSnake(int matrix[4][4])
-// {
-
-// cout<<"Printing matrix in snake pattern :"<<endl;
-//   int row2 = 3;
-//   for (int i = 0; i < 4; i++)
-//   {
-//     row2 = 3 ; 
-//     for (int j = 0; j < 4; j++) 
-//     {
-//       if(i % 2 == 0)
-//       {
-//          cout<<matrix[i][j]<<" ";
-//       }
-//       else{
-//       cout<<matrix[i][row2--]<<" ";
-//       }
-//     }
-//   }
-
-// }
-
-vector<int> snakePattern(vector<vector<int> > matrix)
+void snakePattern(vector<vector<int> > matrix)
 {
   // code here
-  int row = matrix.size() ;
-  cout<<"Printing matrix in snake pattern :"<<endl;
-  int row2 = row;
+  int row = matrix.size();
+  cout << "Printing matrix in snake pattern :" << endl;
+  int col = matrix[0].size() - 1;
+
+
+  cout << matrix[0][col] << " " << endl;
   for (int i = 0; i < row; i++)
   {
-    row2 = 3 ; 
-    for (int j = 0; j < row; j++) 
+    for (int j = 0; j < matrix[i].size(); j++)
     {
-      if(i % 2 == 0)
-      {
-         cout<<matrix[i][j]<<" ";
-      }
-      else{
-      cout<<matrix[i][row2--]<<" ";
-      }
+      if (i % 2 == 0)
+        cout << matrix[i][j] << " ";
+      else
+        cout << matrix[i][col - j] << " ";
     }
   }
 
@@ -53,7 +30,7 @@ int main()
 
   // printSnake(matrix);
 
-  vector<vector<int>>matrix = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} } ;
+  vector<vector<int>>matrix = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
   for (int i = 0; i < 4; i++)
   {
     cout << "[ ";
