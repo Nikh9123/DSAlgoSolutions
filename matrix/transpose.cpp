@@ -1,57 +1,39 @@
-#include <iostream>
-#include <vector>
+//@https://leetcode.com/problems/transpose-matrix/description/
+
+#include<bits/stdc++.h>
 using namespace std;
 
-void transpose(vector<vector<int>>matrix, int n)
-{
-  //naive method 
-  int m = matrix[0].size();
-  vector<vector<int>>arr(m, vector<int>(n, 0));
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      arr[j][i] = matrix[i][j];
+// Transpose a matrix
+vector<vector<int>> transpose(vector<vector<int>>& matrix) {
+
+  int rows = matrix.size();
+  int cols = matrix[0].size();
+
+  vector<vector<int>> ans(cols, vector<int>(rows)); // Transposed matrix
+
+  // Fill the transposed matrix 'ans'
+  for (int i = 0; i < cols; i++) {
+    for (int j = 0; j < rows; j++) {
+      ans[i][j] = matrix[j][i];
     }
   }
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      matrix[i][j] = arr[i][j];
+
+  cout << "col = " << ans[0].size() << " " << "row = " << ans.size() << endl;
+
+  // Print the transposed matrix
+  for (int i = 0; i < ans.size(); i++) {
+    cout << "[ ";
+    for (int j = 0; j < ans[0].size(); j++) {
+      cout << ans[i][j] << " ";
     }
+    cout << " ]" << endl;
   }
+  return ans;
 }
 
 int main() {
-  int rows = 3;
-  int cols = 4;
+  vector<vector<int>> matrix = { {1,2,3,19},{4,5,6,11},{7,8,9,12} };
 
-  // // Create a matrix (2D vector) with rows and cols
-  // vector<vector<int>> matrix(rows, vector<int>(cols));
-
-  // // Initialize the matrix with values
-  // for (int i = 0; i < rows; ++i) {
-  //     for (int j = 0; j < cols; ++j) {
-  //         matrix[i][j] = i * cols + j;
-  //     }
-  // }
-
-  vector<vector<int> > matrix{ { 1, 2, 3,27 },
-                                 { 4, 5, 6,36 },
-                                 { 7, 8, 9 ,81} };
-
-  cout << matrix.size() << endl;;
-
-  // Print the matrix
-  for (int i = 0; i < rows; ++i) {
-    for (int j = 0; j < cols; ++j) {
-      cout << matrix[i][j] << " ";
-    }
-    cout << endl;
-  }
-  transpose(matrix, 3);
-  cout << "after" << endl;
-  for (int i = 0; i < rows; ++i) {
-    for (int j = 0; j < cols; ++j) {
-      cout << matrix[i][j] << " ";
-    }
-    cout << endl;
-  }
+  vector<vector<int>> ans = transpose(matrix);
+  return 0;
 }

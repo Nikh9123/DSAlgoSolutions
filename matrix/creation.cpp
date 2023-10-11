@@ -1,38 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
+/*
 int main()
 {
-  int m = 4; //row 
-  int n = 3;//column
+  int m = 40; //row
+  int n = 30;//column
 
-  //delaration of matrix 3*3 
-  // int arr[m][n] ;
-/*
-  //* taking input --> row wise
-  for(int i= 0 ; i < m ; i++)
+  //matix creation using double pointer
+  int** arr;
+  arr = new int* [n];
+
+  for (int i = 0; i < m; i++)
   {
-    for(int j =0 ;j < n ; j++)
-    {
-      cin>>arr[i][j] ;
-    }
+    arr[i] = new int[m];
   }
 
-  //* taking input --> column wise
-  for(int i =0 ; i < n ; i++)
+  for (int i = 0; i < n; i++)
   {
-    for(int j =0 ; j < m ; j++)
+    for (int j = 0; j < m; j++)
     {
-      cin>>arr[j][i] ;
+      arr[i][j] = j+1;
     }
   }
-  */
   //* hard coded input
-  //  int arr[3][4] ={1,2,3,4,5,6,7,8,9,10,11,12} ;
+  vector<vector<int>>arr1 = { {1,2,3,4},{2,4,6,8},{3,6,9,12} };
 
-  //* hard coded input 
-  int arr[3][4] = { {1,2,3,4},{2,4,6,8},{3,6,9,12} };
+  cout<<arr1.size()<<endl;
 
-  //printing 2d array 
+  //printing 2d array
+  cout<<"printing matrix of "<<m<<"*"<<n<<endl;
+
   for (int i = 0; i < n; i++)
   {
     cout << "[ ";
@@ -40,7 +37,42 @@ int main()
     {
       cout << arr[i][j] << " ";
     }
-    cout << " ]" << endl;
+    cout << "]" << endl;
   }
 
+}
+*/
+
+void print(vector<int> arr[], int m)
+{
+  cout << "printing matrix of " << m << "*" << arr[0].size() << endl;
+
+  for (int i = 0; i < m; i++)
+  {
+    cout << "[ ";
+    for (int j = 0; j < arr[i].size(); j++)
+    {
+      cout << arr[i][j] << " ";
+    }
+    cout << "]" << endl;
+  }
+}
+
+int main()
+{
+  int m = 3, n = 2;
+
+  vector<int> arr[m];
+
+  for (int i = 0; i < m; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      arr[i].push_back(i);
+    }
+  }
+
+  print(arr, m);
+
+  return 0;
 }
