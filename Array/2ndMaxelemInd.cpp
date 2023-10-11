@@ -32,7 +32,7 @@
 //     cout<<getLargest(arr , n);
 
 // }
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int secondlargest(int arr[], int n)
 {
