@@ -1,23 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-int findSubstring(string str)
-{
-  int n = str.length();
-  int cnt = 0;
-  for (int i = 1; i < n; i++)
+int subarraysWithXORK(vector < int > a, int k) {
+  // Write your code here
+  map<int, int>strPrefixXor;
+  int Xor = 0;
+  int count = 0;
+  for (int i = 0; i < a.size(); i++)
   {
-    if (str[i] != str[i - 1])
+    //prefix xor 
+    Xor ^= a[i];
+    cout<<"XOR = "<<Xor<<endl;
+
+    //using formula
+    int x = Xor ^ k;
+    cout<<"target to find = "<<x<<endl;
+    if (Xor == k)
     {
-      cnt++;
+      count++;
     }
+    if (strPrefixXor.find(x) != strPrefixXor.end())
+    {
+      count += strPrefixXor[x];
+    }
+    strPrefixXor[x]++;
   }
-  return cnt;
+  return count;
 }
 
 int main()
 {
-  string str = "abcabcbb";
-  cout << findSubstring(str) << endl;
-
+  vector<int>arr = { 4,2,2,6,4 };
+  int ans = subarraysWithXORK(arr, 6);
+  cout << ans << endl;
 }
