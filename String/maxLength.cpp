@@ -7,7 +7,8 @@
 
 *    Input : a = 3,b = 3, c = 3
 *    Output : 9
-*    Explanation : No three consecutive character of the string "abcabcabc" is same.Example 2 :
+*    Explanation : No three consecutive character of the string "abcabcabc" is same.
+     Example 2 :
 
 *     Input : a = 11,b = 2, c = 2
 *     Output : -1

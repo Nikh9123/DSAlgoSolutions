@@ -18,7 +18,7 @@ bool isSubsequence(string s, string t) {
 }
 
 int main() {
-    string t = "axc", s = "ahbgdc";
+    string t = "ach", s = "ahbgdc";
     
     if (isSubsequence(s, t)) {
         cout << "s is a subsequence of t" << endl;
