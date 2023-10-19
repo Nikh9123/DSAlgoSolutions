@@ -24,9 +24,11 @@ The solutions are available in the following programming languages:
 - **`/arrays`**: Solutions related to array manipulation and algorithms.
 - **`arrays/sorting`**: Implementations of popular sorting algorithms and questions.
 - **`arrays/searching`**: Implementations of common searching algorithms.
+- **`/linkedLists`**: Problems and algorithms associated with linked lists.
 - **`/string`**: Problems focusing on strings and their variations.
 - **`/recursion`**: solutions of frequently asked interview questions based on recursion
-- **`/linked-lists**: Problems and algorithms associated with linked lists.
+- **`/numberSystem`/**: problems associated with number systems in DS Algo.
+- **`/practice`** : this directory is for practising the questions on a daily basis.
   
 
 You can go through the directories to find specific problems and their solutions.
