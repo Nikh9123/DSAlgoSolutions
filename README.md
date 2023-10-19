@@ -27,7 +27,7 @@ The solutions are available in the following programming languages:
 - **`/linkedLists`**: Problems and algorithms associated with linked lists.
 - **`/string`**: Problems focusing on strings and their variations.
 - **`/recursion`**: solutions of frequently asked interview questions based on recursion
-- **`/numberSystem`/**: problems associated with number systems in DS Algo.
+- **`/numberSystem`**: problems associated with number systems in DS Algo.
 - **`/practice`** : this directory is for practising the questions on a daily basis.
   
 
