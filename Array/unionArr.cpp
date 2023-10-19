@@ -1,60 +1,75 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector < int > unionArray(vector < int > a, vector < int > b) {
-  // Write your code here
-  int n1 = a.size();
-  int n2 = b.size();
 
-  int i = 0;
-  int j = 0;
-  vector<int>unionArr;
+// Function to merge two sorted arrays into a single sorted array without duplicates
+vector<int> sortedArray(vector<int> a, vector<int> b) {
+    vector<int> ans; // Initialize a vector to store the merged result
+    int n = a.size(); // Size of the first input array
+    int m = b.size(); // Size of the second input array
+    int i = 0, j = 0; // Pointers for the two input arrays
 
-  while (i < n1 && j < n2)
-  {
-    if (a[i] <= b[j])
-    {
-      if (unionArr.size() == 0 || unionArr.back() != a[i])
-      {
-        unionArr.push_back(a[i]);
-      }
-      i++;
+    // Merge the arrays until one of them is completely processed
+    while (i < n && j < m) {
+        // If the element from the first array is smaller
+        if (a[i] < b[j]) {
+            // Check if it's a duplicate, and if not, add it to the merged array
+            if (ans.empty() || ans.back() != a[i]) {
+                ans.push_back(a[i]);
+            }
+            i++; // Move the pointer in the first array
+        }
+        // If the element from the second array is smaller
+        else if (b[j] < a[i]) {
+            // Check if it's a duplicate, and if not, add it to the merged array
+            if (ans.empty() || ans.back() != b[j]) {
+                ans.push_back(b[j]);
+            }
+            j++; // Move the pointer in the second array
+        }
+        // If both elements are equal
+        else {
+            // Check if it's a duplicate, and if not, add it to the merged array
+            if (ans.empty() || ans.back() != a[i]) {
+                ans.push_back(a[i]);
+            }
+            i++; // Move the pointer in the first array
+            j++; // Move the pointer in the second array
+        }
     }
-    else {
-      if (unionArr.size() == 0 || unionArr.back() != b[j])
-      {
-        unionArr.push_back(b[j]);
-      }
-      j++;
-    }
-  }
 
-  while (i < n1)
-  {
-    if (unionArr.size() == 0 || unionArr.back() != a[i])
-    {
-      unionArr.push_back(a[i]);
+    // Add remaining elements from the first array
+    while (i < n) {
+        if (ans.empty() || ans.back() != a[i]) {
+            ans.push_back(a[i]);
+        }
+        i++; // Move the pointer in the first array
     }
-    i++;
-  }
-  while (j < n2)
-  {
-    if (unionArr.size() == 0 || unionArr.back() != b[j])
-    {
-      unionArr.push_back(b[j]);
+
+    // Add remaining elements from the second array
+    while (j < m) {
+        if (ans.empty() || ans.back() != b[j]) {
+            ans.push_back(b[j]);
+        }
+        j++; // Move the pointer in the second array
     }
-    j++;
-  }
-  return unionArr;
+
+    return ans; // Return the merged and sorted array without duplicates
 }
-int main() {
-  //arrays must be sorted
-  vector<int> arr1 = { 1,1,2,2,2,3,4,5 };
-  vector<int>arr2 = { 1,1,1,2,3,4,5,6,7, };
 
-  vector<int>ans = unionArray(arr1, arr2);
-  cout<<"union array is :"<<endl;
-  for (auto it : ans)
-  {
-    cout << it << " ";
-  }
+int main() {
+    // Example usage of the sortedArray function
+    vector<int> a = { 1, 3, 5, 7 };
+    vector<int> b = { 2, 3, 4, 6, 8 };
+
+    // Call the function and get the merged and sorted result
+    vector<int> result = sortedArray(a, b);
+
+    // Output the merged and sorted array without duplicates
+    cout << "Merged Sorted Array without Duplicates: ";
+    for (int num : result) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
 }

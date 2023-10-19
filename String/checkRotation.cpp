@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 /*
 bool checkRotation(string s, string t)
 {
@@ -27,10 +28,12 @@ bool checkRotation(string s, string t)
 // This function takes two input strings, s and goal, and checks if goal can be obtained
 // by rotating the string s.
 bool checkRotation(string s, string goal) {
+
   // Check if the length of the input strings s and goal is the same.
   if (s.length() == goal.length() && ((s + s).find(goal) != string::npos)) { //
     // If the lengths are equal and goal is found in the concatenated string s+s,
     // then goal can be obtained by rotating the string s. Return true.
+    
     return true;
   }
   // If the conditions are not met, return false, indicating goal cannot be obtained

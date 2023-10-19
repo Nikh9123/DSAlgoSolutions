@@ -22,11 +22,10 @@ bool isPalindrome(string s) {
       {
         s[i] = tolower(s[i]);
       }
-
     }
     else {
-      s.erase(s.begin() + i);
-      i--; // to check double ,, or spaces
+      s.erase(s.begin() + i); 
+      i--; // to check double commas or spaces
     }
   }
   string rev = s;
