@@ -19,20 +19,26 @@ void display(node* head)
   }
   cout << endl;
 }
+
+// insert an element at end of linked list
 node* insertAtEnd(node* head, int x)
 {
   node* temp = new node(x);
   node* curr = head;
+
   if (head == NULL)
   {
     return temp;
   }
-    while (curr->next != NULL)
+
+  // we ned to hold the last node of linked list and then add the new node at the end
+  while (curr->next != NULL)
   {
     cout << curr->data << "-->";
     curr = curr->next;
   }
-    curr->next = temp;
+  cout << endl;
+  curr->next = temp; // adding the new node at the end of linked list
   return head;
 }
 int main()
@@ -43,6 +49,6 @@ int main()
   head->next->next->next = new node(40);
   display(head);
   insertAtEnd(head, 90);
-  cout << "after function" << endl;
+  cout << "after insertion : " << endl;
   display(head);
 }

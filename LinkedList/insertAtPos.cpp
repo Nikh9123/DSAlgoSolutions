@@ -19,21 +19,22 @@ void display(node* head)
     cout << curr->data << "->";
     curr = curr->next;
   }
-  cout<<"NULL" << endl;
+  cout << "NULL" << endl;
 }
 
-node *insertAtPosition(node *head , int x , int pos)
+node* insertAtPosition(node* head, int x, int pos)
 {
-  int count = pos - 2;
-  node* curr = head;
-  node* temp = new node(x);
-  while (count)
+  int count = 1;
+  node* temp = new node(x);// creating a new node
+  node* curr = head; // curr pointer points to head and traverse tll pos-1
+  while (count != pos - 1)
   {
-    count--;
     curr = curr->next;
+    count++;
   }
-  temp->next = curr->next;
-  curr->next = temp;
+  temp->next = curr->next; //we are inserting the node at pos so we have to make the next of temp to curr->next if we don't do this then we will lose he connection of further nodes
+  curr->next = temp; // now we have to make the next of curr to temp because curr is pointing to pos-1 and we have to insert the node at pos so we have to make the next of curr to temp
+  return head;
 }
 int main()
 {
@@ -42,10 +43,9 @@ int main()
   head->next->next = new node(30);
   head->next->next->next = new node(40);
   head->next->next->next->next = new node(50);
-  
+
   display(head);
-  int a = ceil(3 / 2);
-  cout << a << endl;
-  insertAtPosition(head, 35, 4);
+
+  insertAtPosition(head, 15, 2);
   display(head);
 }
