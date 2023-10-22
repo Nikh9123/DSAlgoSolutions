@@ -24,7 +24,8 @@ The solutions are available in the following programming languages:
 - **`/arrays`**: Solutions related to array manipulation and algorithms.
 - **`arrays/sorting`**: Implementations of popular sorting algorithms and questions.
 - **`arrays/searching`**: Implementations of common searching algorithms.
-- **`/linkedLists`**: Problems and algorithms associated with linked lists.
+- **`/linkedList/singly linked list`**: Problems and algorithms associated with singly linked lists.
+- **`/linkedList/doubly linked list`**: Problems and algorithms associated with doubly linked lists.
 - **`/string`**: Problems focusing on strings and their variations.
 - **`/recursion`**: solutions of frequently asked interview questions based on recursion
 - **`/numberSystem`**: problems associated with number systems in DS Algo.
@@ -41,8 +42,4 @@ If you have a new solution to an existing problem or want to add a solution in a
 2. Create a new branch: `git checkout -b feature/new-solution`
 3. Commit your changes: `git commit -am 'Add new solution in Python'`
 4. Push to the branch: `git push origin feature/new-solution`
-5. Submit a pull request
-
-## License
-
-This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+5. Submit a pull request: `git pull `
