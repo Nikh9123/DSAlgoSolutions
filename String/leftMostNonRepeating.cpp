@@ -32,19 +32,21 @@ int leftMostNonRepeating(string s)
 
   for (int i = 0; i < s.length(); i++)
   {
-    if (fi[s[i]] == -1)
+    if (fi[s[i]] == -1)// if fi[s[i]] = -1 then it means that s[i] is not present in string s means it is unique character
     {
       //store index of element in fi[s[i]] position if s[i] = 'a' whose ascii value = 97 then it will store thier index of a  
       fi[s[i]] = i;
     }
     else {
-      fi[s[i]] = -2;
+      fi[s[i]] = -2; // if the character is repeating then store -2 in fi[s[i]] position
     }
   }
   int res = INT_MAX;
   for (int i = 0; i < CHAR; i++)
   {
-    if (fi[i] >= 0)
+    if (fi[i] >= 0)  // if fi[i] >= 0 then it means that it is unique character because in upper loop 
+    //we are storing index of character and if it is -1 then it means this is the first occurence of character 
+    //and if it is -2 then it means that character is repeating
     {
       res = min(res, fi[i]);
     }

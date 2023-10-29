@@ -30,7 +30,7 @@ bool checkRotation(string s, string t)
 bool checkRotation(string s, string goal) {
 
   // Check if the length of the input strings s and goal is the same.
-  if (s.length() == goal.length() && ((s + s).find(goal) != string::npos)) { //
+  if (s.length() == goal.length() && ((s + s).find(goal) != string::npos)) { // string::npos is a constant value of type size_t which means until the end of the string the goal does not found.
     // If the lengths are equal and goal is found in the concatenated string s+s,
     // then goal can be obtained by rotating the string s. Return true.
     

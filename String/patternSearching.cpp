@@ -6,7 +6,7 @@ vector<int>patterSearch(string text, string pattern)
   int n = text.length();//length of the text
   int m = pattern.length(); //length of pattern
 
-  for (int i = 0; i < n - m + 1; i++)
+  for (int i = 0; i < n - m + 1; i++)// n-m+1 is for the length of text from where we can search the pattern
   {
     int j;
     for (j = 0; j < m; j++)

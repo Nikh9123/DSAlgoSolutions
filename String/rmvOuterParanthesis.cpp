@@ -3,6 +3,8 @@ using namespace std;
 
 class Solution {
 public:
+
+// this function will remove the outer paranthesis from the string
   string removeOuterParentheses(string s) {
     int cnt = 0;
     bool flag = true;

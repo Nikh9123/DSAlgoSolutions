@@ -35,6 +35,7 @@ using namespace std;
 
 string reverseWords(string s) {
   int n = s.size();
+  cout<<"length of string = "<<n<<endl;
   int i = n - 1;
 
   // Require to store the resultant string (output)
@@ -48,12 +49,15 @@ string reverseWords(string s) {
     // Skip all the consecutive characters and find the start point of that word
     while (i >= 0 && s[i] != ' ') i--;
     int startPoint = i + 1;
-
+    cout<<" start point = "<<startPoint<<" end point = "<<endPoint<<endl;
     // Store the word to the resultant string (output)
     output.append(s.substr(startPoint, endPoint - startPoint + 1));
-    output.push_back(' ');
-  }
+    cout << "after appending output = " << output << " && output size = "<<output.size()<<endl;
+    output.push_back(' ');// Add a space after each word
+    cout << "after appending space output = " << output << " && output size = "<<output.size()<<endl;
 
+  }
+ 
   // Iterate and remove the additional spaces 
   while (!output.empty() && output.back() == ' ') {
     output.pop_back();
