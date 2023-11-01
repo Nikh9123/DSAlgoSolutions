@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 void merge(int *arr, int s, int e)
 {
   int mid = s + (e - s) / 2;
@@ -45,13 +46,13 @@ void mergeSort(int arr[], int s, int e)
 
   int mid = s + (e - s) / 2;
   // left wala part
-  mergeSort(arr, s, mid);
+  mergeSort(arr, s, mid);// this will divide the left part
 
   // right wala part
-  mergeSort(arr, mid + 1, e);
+  mergeSort(arr, mid + 1, e);// this will divide the right part
 
   // sort them and copy
-  merge(arr, s, e);
+  merge(arr, s, e);// this will sort the left and right part and copy them in the main array
 }
 
 int main()

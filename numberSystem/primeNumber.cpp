@@ -30,9 +30,9 @@ bool CheckPrime(int n)
     //     return true ;
     // }
     // sabse jyda efiicient ⚠️⚠️⚠️⚠️⚠️
-    if (n == 1)
+    if (n == 1) // this line is for checking if n is 1 then it will return false because 1 is not a prime number
         return false;
-    if (n == 2 || n == 3)
+    if (n == 2 || n == 3) 
     {
         return false;
     }

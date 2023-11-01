@@ -24,7 +24,7 @@ bool isPalindrome(string s) {
       }
     }
     else {
-      s.erase(s.begin() + i); 
+      s.erase(s.begin() + i); // erase commas and spaces
       i--; // to check double commas or spaces
     }
   }
