@@ -28,7 +28,7 @@ void printList(node* head)
 // Function to remove the N-th node from the end of the linked list
 node* removeNthNodeFromEnd(node* head, int n)
 {
-  // Approach 1: Calculate length first (O(2n) approach)
+  //* Approach 1: Calculate length first (O(2n) approach)
 
   /*
   if (head == NULL)
@@ -66,13 +66,13 @@ node* removeNthNodeFromEnd(node* head, int n)
   return head;
   */
 
-  // Approach 2: Slow and fast pointer approach (Optimized, O(n) approach)
+  //* Approach 2: Slow and fast pointer approach (Optimized, O(n) approach)
 
   if (head == NULL)
   {
     return NULL;
   }
-
+  
   node* slow = head;
   node* fast = head;
 
