@@ -9,7 +9,6 @@ struct ListNode {
   ListNode(int x, ListNode* next) : val(x), next(next) {}
 
 };
-
 class Solution {
 public:
   ListNode* getAddtwoList(ListNode* head1, ListNode* head2)
