@@ -1,32 +1,47 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int binarySearch(int arr[], int n , int key)
-{
-int start = 0, end = n-1 ;
-while(start <= end)
-{
-  int mid = (start + (end - start))/2 ;
+bool isIsomorphic(string s, string t) {
+  if (s.length() != t.length()) return false;
+  map<char, char>mapChar;
 
-  if(arr[mid] == key)
+  //loop to a string
+  for (int i = 0; i < s.length(); i++)
   {
-    return mid ;
+    if (mapChar.find(s[i]) != mapChar.end())
+    {
+      char mapped = mapChar[s[i]];
+      if (mapped != t[i])
+      {
+        return false;
+      }
+    }
+    else if (mapChar.find(s[i]) == mapChar.end())
+    {
+      for (auto pair : mapChar)
+      {
+        //if the t's string char is already mapped with another char
+        
+        if (pair.second == t[i])
+        {
+          cout << pair.second << endl;
+          return false;
+        }
+      }
+        mapChar[s[i]] = t[i];
+    }
   }
-  else if(arr[mid] > key)
-  {
-    end = mid -1 ;
-  }
-  else if(arr[mid] < key)
-  {
-    start = mid+1 ;
-  }
-}
-return -1 ;
-}
+  return true;
 
-int main() {
-int n = 7 ;
-int key = 10 ;
-int arr[n] = {10,12,14,16,17,19,29}; 
-cout<<binarySearch(arr,n,key);
+}
+int main()
+{
+  string s1 = "foo";
+  string s2 = "bar";
+  if (isIsomorphic(s1, s2))
+    cout << "The strings are isomorphic." << endl;
+  else
+    cout << "The strings are not isomorphic." << endl;
+
+  return 0;
 }
