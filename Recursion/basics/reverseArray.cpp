@@ -4,11 +4,17 @@ using namespace std;
 void get_Reversed_Array(vector<int>& arr, int low, int high)
 {
   if (low > high) return;
-  get_Reversed_Array(arr, low + 1, high - 1);
   swap(arr[low], arr[high]);
+  get_Reversed_Array(arr, low + 1, high - 1);
   return;
 }
+void getReversed(vector<int>& arr, int n, int i)
+{
+  if (i > n / 2) return;
 
+  swap(arr[i], arr[n - i - 1]);
+  getReversed(arr, n, i + 1);
+}
 int main()
 {
   vector<int> arr = { 1,2,3,4,5,6,7,8,9,10 };
@@ -19,7 +25,8 @@ int main()
     cout << arr[i] << " ";
   }
   cout << endl;
-  get_Reversed_Array(arr, 0, arr.size() - 1);
+  // get_Reversed_Array(arr, 0, arr.size() - 1);
+  getReversed(arr, arr.size(), 0);
   cout << "the reversed array is : " << endl;
   for (int i = 0; i < arr.size(); i++)
   {
