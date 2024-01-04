@@ -23,7 +23,7 @@ vector<vector<int>> getAllSubsequences(vector<int>& arr, vector<int> temp, int i
 }
 
 int main() {
-    vector<int> arr = {3, 1, 2};
+    vector<int> arr = {1,2,2};
     vector<int> temp;
     vector<vector<int>> ans = getAllSubsequences(arr, temp, 0);
 
