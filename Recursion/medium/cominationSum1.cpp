@@ -28,11 +28,11 @@ vector<vector<int>>getSumCombination(vector<int>& arr, vector<int>temp, int targ
 
 int main()
 {
-  vector<int>arr = { 2,3,6,7 };
+  vector<int>arr = { 10,1,2,7,6,1,5 };
   vector<vector<int>>solution;
   vector<int>temp;
 
-  int target = 7;
+  int target = 8;
   vector<vector<int>>ans = getSumCombination(arr, temp, target, 0, solution);
   cout << "The subsequences are : " << endl;
   for (auto x : ans)
