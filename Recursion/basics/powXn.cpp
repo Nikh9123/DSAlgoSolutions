@@ -1,38 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-double getPow(double x, int n)
+double getPowXn(double x, int n)
 {
-  if (n == 1)
-  {
-    return x * n;
-  }
-  if (n == 0) return 1;
-  
-  x *= getPow(x, n - 1);
+    if (n == 0)
+        return 1.0;
 
-  return x;
+    double result = 1.0;
+    result *=  x ;
+    n-- ;
+    return getPowXn(x, n) ;
 }
-
 
 int main()
 {
-  double x;
+  float x;
   int n;
-  cout << "enter the value of x : ";
+  cout << "enter the value of x : " << endl;
   cin >> x;
-  cout << "enter the value of n : ";
+  cout << x << endl;
+  cout << "enter the value of n : " << endl;
   cin >> n;
-  double ans;
-  if (n < 0)
-  {
-    n *= -1;
-    ans = getPow(x, n);
-    ans = 1.0 / ans;
-  }
-  else {
-    ans = getPow(x, n);
-  }
-  cout << "ans is : " << ans << endl;
+  cout << n << endl;
+  float ans = getPowXn(x, n);
+
+  cout<< fixed << setprecision(3)  << "ans : " << ans << endl;
+
   return 0;
 }
