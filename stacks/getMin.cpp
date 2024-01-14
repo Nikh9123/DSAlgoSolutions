@@ -2,8 +2,7 @@
 using namespace std ;
 
 class MinStack {
-  int minEle ;
-  stack<int>s ;
+  
 public:
     MinStack() {
         minEle = INT_MAX ;
