@@ -15,7 +15,9 @@ Your task is to help Ninja determine the minimum cost to make ‘STR’ valid.
 using namespace std;
 
 int main(){
+
   string s = "{{}}";
+  
   stack<char>st;
   int cost = 0;
   for(int i = 0; i < s.length(); i++){
