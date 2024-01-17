@@ -20,8 +20,11 @@ Output:
 
 vector<int> countGreater(vector<int>& arr, vector<int>& query) {
   // Write your code here.
+
   map<int, int>mp;
   int cnt = 0;
+
+  //step 1 : 
   for (int i = 0; i < arr.size(); i++) {
     cnt = 0;
     int ele = arr[i];
