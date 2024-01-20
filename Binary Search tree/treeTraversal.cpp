@@ -29,7 +29,37 @@ public:
     return preorder;
   }
 
+void inOrderTraverse(TreeNode* root, vector<int>& inorder) {
+    if (root == nullptr) {
+      return;
+    }
 
+    inOrderTraverse(root->left, inorder);//
+    inorder.push_back(root->val);
+    inOrderTraverse(root->right, inorder);
+
+  }
+  vector<int> inorderTraversal(TreeNode* root) {
+    vector<int>inorder;
+    inOrderTraverse(root, inorder);
+    return inorder;
+  }
+
+  void postOrderTraverse(TreeNode* root, vector<int>& postorder) {
+    if (root == nullptr) {
+      return;
+    }
+
+    postOrderTraverse(root->left, postorder); //
+    postOrderTraverse(root->right, postorder);
+    postorder.push_back(root->val);
+  }
+
+  vector<int> postorderTraversal(TreeNode* root) {
+    vector<int> postorder;
+    postOrderTraverse(root, postorder);
+    return postorder;
+  }
   
 };
 
