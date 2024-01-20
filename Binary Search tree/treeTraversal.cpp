@@ -15,6 +15,7 @@ struct TreeNode {
 
 class Solution {
 public:
+  //* we use rcursion for pre , oost and inorder traversal
   void preOrderTraverse(TreeNode* root, vector<int>& preorder) {
     if (root == nullptr) {
       return;
