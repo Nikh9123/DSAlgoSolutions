@@ -19,17 +19,17 @@ public:
   vector<int> postorderTraversal(TreeNode* root) {
     stack<TreeNode*>st;  // Stack to keep track of nodes to visit
     vector<int>postorder;  // Vector to store the postorder traversal
-
+    //left->right->root
     TreeNode* temp = root;  // Start from the root
     while (temp != NULL) {  // While there are nodes to visit
       // If the node has no left child, add it to the postorder traversal
       if (temp->left == NULL) {
-        cout << "temp->val " << temp->val <<endl;
+        cout << "temp->val " << temp->val << endl;
         postorder.push_back(temp->val);
       }
       // If the node has no right child, add it to the postorder traversal
       if (temp->right == NULL) {
-        cout<<"temp->val in right "<<temp->val<<endl;
+        cout << "temp->val in right " << temp->val << endl;
         postorder.push_back(st.top()->val);
         temp = st.top()->right;
         st.pop();
@@ -64,6 +64,27 @@ public:
     }
     return ans;  // Return the preorder traversal
   }
+  vector<int> inorderTraversal(TreeNode* root) {
+    stack<TreeNode*> st;
+    vector<int>inorder;
+
+    TreeNode* temp = root;
+    while (temp != nullptr || !st.empty())
+    {
+      //push all the element in left of tree in stack
+      while (temp != nullptr) {
+        st.push(temp);
+        temp = temp->left;
+      }
+
+      temp = st.top();
+      st.pop();
+      inorder.push_back(temp->val);
+      temp = temp->right;
+    }
+    return inorder;
+  }
+
 };
 
 int main() {
@@ -79,10 +100,10 @@ int main() {
   Traversal t;  // Create a Traversal object
   // Perform the traversals and store the results
   vector<int>preorder = t.preorderTraversal(root);
-  vector<int>postorder = t.postorderTraversal(root);
+  vector<int>inorder = t.inorderTraversal(root);
 
   // Print the postorder traversal
-  for (auto x : postorder) {
+  for (auto x : inorder) {
     cout << x << " ";
   }
   cout << endl;
