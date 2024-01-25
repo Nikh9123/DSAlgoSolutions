@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Definition for a binary tree node.
 struct TreeNode {
   int val;
   TreeNode* left;
@@ -11,11 +12,13 @@ struct TreeNode {
 };
 
 class Solution {
+    // Function to check if a node is a leaf node
     bool isLeaf(TreeNode* root) {
       if (!root->left and !root->right) return true;
       else return false;
     }
 
+    // Function to add left boundary nodes to the result
     void addLeftBoundry(TreeNode* root, vector<int>& res) {
       TreeNode* curr = root->left;
       while (curr) {
@@ -27,6 +30,7 @@ class Solution {
       }
     }
 
+    // Function to add right boundary nodes to the result
     void addRightBoundry(TreeNode* root, vector<int>& res) {
       TreeNode* curr = root->right;
       vector<int>temp;
@@ -37,10 +41,13 @@ class Solution {
         else curr = curr->left;
       }
 
+      // Add the right boundary nodes in reverse order
       for (int i = temp.size() - 1; i >= 0; --i) {
         res.push_back(temp[i]);
       }
     }
+
+    // Function to add leaf nodes to the result
     void addLeafNode(TreeNode* root, vector<int>& res) {
       if (isLeaf(root)) {
         res.push_back(root->val);
@@ -49,25 +56,27 @@ class Solution {
       if (root->left) addLeafNode(root->left, res);
       if (root->right) addLeafNode(root->right, res);
     }
+
   public:
+    // Function to print the boundary of a binary tree
     vector<int> printBoundry(TreeNode* root) {
       vector<int>res;
       if (!root) return res;
       if (!isLeaf(root)) res.push_back(root->val);
 
-      //get left boundry exclude leaf nodes
+      // Add left boundary nodes excluding leaf nodes
       addLeftBoundry(root, res);
-      //add the leaves node
+      // Add leaf nodes
       addLeafNode(root, res);
-      //add right boundry
+      // Add right boundary nodes
       addRightBoundry(root, res);
 
       return res;
-
     }
 };
 
 int main() {
+  // Construct the binary tree
   TreeNode* root = new TreeNode(1);
   root->left = new TreeNode(2);
   root->left->left = new TreeNode(3);
@@ -80,6 +89,8 @@ int main() {
   root->right->right->left = new TreeNode(9);
   root->right->right->left->left = new TreeNode(10);
   root->right->right->left->right = new TreeNode(11);
+
+  // Create the solution object and print the boundary
   Solution s;
   vector<int>boundryTraversal = s.printBoundry(root);
 
@@ -87,5 +98,4 @@ int main() {
     cout << x << " ";
   }
   return 0;
-
 }
