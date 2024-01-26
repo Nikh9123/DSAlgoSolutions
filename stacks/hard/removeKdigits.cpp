@@ -9,7 +9,7 @@ public:
 
       while (!st.empty() && k > 0 && st.top() > c) { // pop stack top element if top element is greater than c because it is the staring of deep 
         k--;
-        st.pop();
+        st.pop(); //
       }
 
       if (!st.empty() || c != '0') { // c!= '0' for not pushing 0 in the bottom of stack because whn we pop elements from stack, we have to remove all the leading zeros and push every element in stack
@@ -17,7 +17,7 @@ public:
       }
     }
 
-    while (!st.empty() && k > 0) { // eg : 456 and k = 4 then return 0 
+    while (!st.empty() && k > 0) { // eg : "1 1 2" in this case the k won't decrease and we have to erase the element fron the last because we have not found any dwon fall yet
       st.pop();
       k--;
     }
@@ -40,7 +40,7 @@ int main() {
   Solution s;
   // string num = "1432219";
   // string num = "14301620";
-  string num = "10";
+  string num = "1111111";
   int k = 4; 
   string ans = s.removeKdigits(num, k);
   cout << "smallest digit after removing = " << ans << endl;

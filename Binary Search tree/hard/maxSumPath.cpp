@@ -6,6 +6,22 @@ Output: 42
 Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
 
 */
+/*
+GitHub Copilot
+The intuition behind this algorithm is to find the maximum path sum in a binary tree, where a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.
+
+The algorithm uses a depth-first search (DFS) strategy and computes two values for each node:
+
+The maximum path sum that includes the current node and one of its subtrees (if any). This is computed as the maximum of the maximum path sums of the left and right subtrees (if they exist) plus the value of the current node. If the maximum path sum of a subtree is negative, it is ignored (i.e., treated as 0). This value is returned by the getPathSum function.
+
+The maximum path sum that includes the current node and both its subtrees (if they exist). This is computed as the maximum path sum of the left subtree plus the maximum path sum of the right subtree plus the value of the current node. If the maximum path sum of a subtree is negative, it is ignored (i.e., treated as 0). This value is used to update the maximum path sum found so far (maxi).
+
+The algorithm starts with the root of the tree and recursively computes the maximum path sums for all nodes in the tree. The maximum path sum found during these computations is the maximum path sum in the tree.
+
+The time complexity of the algorithm is O(N), where N is the number of nodes in the tree, because each node is visited once. The space complexity is O(H), where H is the height of the tree, because of the space required by the call stack for the recursive calls.
+
+
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
