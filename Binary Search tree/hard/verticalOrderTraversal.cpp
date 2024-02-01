@@ -28,7 +28,7 @@ public:
       TreeNode* node = p.first; //* this s the node we are currently processing
       int x = p.second.first, y = p.second.second; //* x is the vertical distance from root, y is the level of the node
       nodes[x][y].insert(node->val); //* insert the node in the multiset of the vertical x and level y
-
+      cout<<"node[x][y] = val : " << x << " " << y << " " << node->val << endl;
       if (node->left) {
         todo.push({ node->left, {x - 1, y + 1} }); //* push the left child with vertical x-1 and level y+1
       }

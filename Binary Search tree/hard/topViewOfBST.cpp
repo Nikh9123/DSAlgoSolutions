@@ -50,7 +50,10 @@ vector<int> getTopView(TreeNode<int>* root)
     if (mpp.find(currVertical) == mpp.end()) {
       mpp[currVertical] = currNode->data;//* if not present then insert the node value in the map
     }
-
+    cout << "currNode->data = " << currNode->data << " currVertical = " << currVertical << endl;
+    for (auto it : mpp) {
+      cout << "it.first : " << it.first << " " << "it.second : " << it.second << endl;
+    }
     //push the left child with vertical currVertical-1
     if (currNode->left) {
       q.push({ currNode->left, currVertical - 1 });
@@ -67,6 +70,58 @@ vector<int> getTopView(TreeNode<int>* root)
   return ans;
 
 }
+
+/*
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
+};
+
+class Solution
+{
+    public:
+    //Function to return a list of nodes visible from the top view
+    //from left to right in Binary Tree.
+    vector<int> topView(Node *root) {
+    vector<int> ans;
+    if (root == nullptr) return ans;
+
+    map<int, int> mpp; // store the node->data with vertical distances
+    queue<pair<Node*, pair<int, int>>> q;
+    q.push({root, {0, 0}});
+
+    while (!q.empty()) {
+        auto it = q.front();
+        q.pop();
+        Node* currNode = it.first;
+        int vertical = it.second.first;
+        int level = it.second.second;
+
+        if (mpp.find(vertical) == mpp.end()) {
+            mpp[vertical] = currNode->data;
+        }
+
+        if (currNode->left != nullptr) {
+            q.push({currNode->left, {vertical - 1, level + 1}});
+        }
+
+        if (currNode->right != nullptr) {
+            q.push({currNode->right, {vertical + 1, level + 1}});
+        }
+    }
+
+    for (auto it : mpp) {
+        ans.push_back(it.second);
+    }
+
+    return ans;
+}
+
+
+};
+*/
 
 
 int main() {

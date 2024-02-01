@@ -26,20 +26,28 @@ using namespace std;
 //   return sol;
 // }
 
+//10,1,2,7,6,1,5
+
+// Function to get all unique combinations that add up to the target
 void getAllUniqueCombinations(vector<int>& arr, int target, int index, vector<vector<int>>& ans, vector<int>& ds)
 {
+  // If the target becomes 0, we have found a valid combination
   if (target == 0) {
-    ans.push_back(ds);
+    ans.push_back(ds); // Add the combination to the answer
     return;
   }
+  // Iterate over the array starting from the index
   for (int i = index; i < arr.size(); i++)
   {
+    // If the current element is less than or equal to the target
     if (arr[i] <= target)
     {
+      // If the current element is the same as the previous element, skip it to avoid duplicates
       if (i > index && arr[i] == arr[i - 1]) continue;
-      ds.push_back(arr[i]);
+      ds.push_back(arr[i]); // Add the current element to the current combination
+      // Recursively call the function for the remaining array and the remaining target
       getAllUniqueCombinations(arr, target - arr[i], i + 1, ans, ds);
-      ds.pop_back();
+      ds.pop_back(); // Remove the current element from the current combination
     }
   }
 }
